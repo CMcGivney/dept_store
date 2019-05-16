@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
   private
     def set_item
-      @item = item.find(params[:item_id])
+      @item = Item.find(params[:item_id])
     end
 
     def review_params
