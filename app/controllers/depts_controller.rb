@@ -1,5 +1,5 @@
 class DeptsController < ApplicationController
-before_action :set_depts, only: [:show, :edit, :update, :destroy]
+  before_action :set_dept, only: [:show, :edit, :destroy, :update]
 
   def index
     @depts = Dept.all
@@ -14,39 +14,39 @@ before_action :set_depts, only: [:show, :edit, :update, :destroy]
     render partial: "form"
   end
 
-  def show
-  end
-
-
   def create
-  @dept = Dept.new(dept_params)
-  if @dept.save
-    redirect_to depts_path
-  else
-    render partial: "form"
+    @dept = Dept.new(dept_params)
+    if @dept.save
+      redirect_to depts_path
+    else
+      render :new
   end
 end
+
+  def show
+  end 
 
   def update
     if @dept.update(dept_params)
       redirect_to @dept
     else
       render :edit
+    end
   end
-end
 
   def destroy
     @dept.destroy
     redirect_to depts_path
   end
 
-    private
-    def set_depts
-      @dept = Dept.find(params[:id])
-      
+  private
+    def set_dept
+    @dept = Dept.find(params[:id])
     end
 
     def dept_params
-      params.require(:dept).permit(:business)
+    params.require(:dept).permit(:business)
     end
-end
+  end
+
+
