@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
   def set_dept
     @dept = Dept.find(params[:dept_id])
   end
-  def set_sub
+  def set_item
     @item = Item.find(params[:id])
   end
   def item_params
