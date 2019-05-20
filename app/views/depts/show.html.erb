@@ -1,14 +1,16 @@
  <h1><%= @dept.business %></h1>
+<hr />
 <p> <%= @dept.type %> </p>
 <p> <%= @dept.phone %> </p>
 <p> <%= @dept.email %> </p>
 <p> <%= @dept.hours %> </p>
-<hr />
 <p>What would you like to do?</p>
 <%= link_to 'View Merchandise', dept_items_path(@dept) %>
 <br />
 <%= link_to 'Edit Business', edit_dept_path(@dept) %>
 <br />
 <%= link_to 'Delete Business', @dept, method: :delete %>
+<br/>
+<%= link_to 'Back', depts_path%>
 
 

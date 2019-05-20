@@ -1,8 +1,8 @@
 <h1>Click To View Item</h1>
 <%= link_to 'Create a new item', new_dept_item_path(@dept) %>
 <ul>
-  <% @items.each do |item| %> %>
-    <li><%= link_to item.discription, [@dept, item]%>
+  <%# @items.depts.each do |item| %> 
+    <li><%= link_to Item.product, [@dept, item]%>
     </li> 
 </ul>
-  <% end %>
+  <%# end %>
